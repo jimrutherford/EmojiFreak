@@ -14,12 +14,12 @@
 #endif
 
 
-#define startSentinalFrequency	12000
-#define stopSentinalFrequency	12500
-#define asciiOffset			13000
+#define startSentinalFrequency	10000
+#define stopSentinalFrequency	10500
+#define asciiOffset			11000
 #define emojiOffset	14000
-#define startBitFrequency	15000
-#define toneInterval			 1.0f
+#define startBitFrequency	18000
+#define toneInterval			 0.5f
 
 
 

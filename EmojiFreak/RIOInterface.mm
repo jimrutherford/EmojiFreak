@@ -168,7 +168,6 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 		// filter out low frequencies that we are not interested in
 		if (currentFrequency >= startSentinalFrequency)
 		{
-			
 			if (currentFrequency != THIS.lastFrequency)
 			{
 				// we have a new frequency detected
@@ -181,7 +180,7 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 					// Call delegate method
 					if (currentFrequency == startBitFrequency)
 					{
-											printf("startbit \n");
+							printf("startbit \n");
 					}
 					
 					else if (currentFrequency == startSentinalFrequency)
@@ -219,8 +218,7 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 			}
 		}
 	}
-	
-	
+
 	return noErr;
 }
 

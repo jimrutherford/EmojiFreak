@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ConfigViewController : ViewController
+@interface ConfigViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+
+- (IBAction)saveOptions:(id)sender;
 
 @end

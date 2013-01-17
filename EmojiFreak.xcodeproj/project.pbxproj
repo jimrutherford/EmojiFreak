@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371F4F8816A89C6500194617 /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 371F4F8716A89C6500194617 /* SettingsManager.m */; };
 		375DB93516A46B8200AE240F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB93416A46B8200AE240F /* UIKit.framework */; };
 		375DB93716A46B8200AE240F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB93616A46B8200AE240F /* Foundation.framework */; };
 		375DB93916A46B8200AE240F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB93816A46B8200AE240F /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371F4F8616A89C6500194617 /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
+		371F4F8716A89C6500194617 /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		375DB93016A46B8200AE240F /* EmojiFreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiFreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375DB93416A46B8200AE240F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		375DB93616A46B8200AE240F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371F4F8A16A89D3000194617 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				371F4F8616A89C6500194617 /* SettingsManager.h */,
+				371F4F8716A89C6500194617 /* SettingsManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		375DB92516A46B8200AE240F = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 		375DB93A16A46B8200AE240F /* EmojiFreak */ = {
 			isa = PBXGroup;
 			children = (
+				371F4F8A16A89D3000194617 /* Managers */,
 				375EE5F416A87D79009C636C /* NVSlideMenuController */,
 				375EE5DF16A75A50009C636C /* Resources */,
 				375DB96A16A4A12400AE240F /* Classes */,
@@ -166,12 +179,12 @@
 				375DB94416A46B8200AE240F /* AppDelegate.m */,
 				375DB94C16A46B8200AE240F /* ViewController.h */,
 				375DB94D16A46B8200AE240F /* ViewController.m */,
-				375DB94F16A46B8200AE240F /* ViewController_iPhone.xib */,
-				375DB95216A46B8200AE240F /* ViewController_iPad.xib */,
 				375EE5FC16A87F64009C636C /* ConfigViewController.h */,
 				375EE5FD16A87F64009C636C /* ConfigViewController.m */,
 				375EE5FE16A87F65009C636C /* ConfigViewController_iPhone.xib */,
 				375EE60116A87FA8009C636C /* ConfigViewController_iPad.xib */,
+				375DB94F16A46B8200AE240F /* ViewController_iPhone.xib */,
+				375DB95216A46B8200AE240F /* ViewController_iPad.xib */,
 				375DB93B16A46B8200AE240F /* Supporting Files */,
 			);
 			path = EmojiFreak;
@@ -364,6 +377,7 @@
 				375EE5D216A5F43A009C636C /* RIOInterface.mm in Sources */,
 				375EE5F716A87D79009C636C /* NVSlideMenuController.m in Sources */,
 				375EE5FF16A87F65009C636C /* ConfigViewController.m in Sources */,
+				371F4F8816A89C6500194617 /* SettingsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

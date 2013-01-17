@@ -7,6 +7,7 @@
 //
 
 #import "ConfigViewController.h"
+#import "SettingsManager.h"
 
 @interface ConfigViewController ()
 
@@ -26,13 +27,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+	NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"userName"];
+	
+	self.nameField.text = username;
+	[[SettingsManager sharedManager] setUsername:username];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)saveOptions:(id)sender {
+	
+	NSString *username = self.nameField.text;
+	
+	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+	[settings setObject:username forKey:@"userName"];
+	[[SettingsManager sharedManager] setUsername:username];
+	[settings synchronize];
+	
 }
 
 @end

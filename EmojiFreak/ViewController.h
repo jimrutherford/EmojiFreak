@@ -18,7 +18,7 @@
 @property(nonatomic, weak) RIOInterface *rioRef;
 @property (strong, nonatomic) ToneGenerator *toneGenerator;
 @property(nonatomic, assign) int currentFrequency;
-
+@property (nonatomic, strong) NSString *currentName;
 
 @property (strong, nonatomic) NSMutableArray *characterArray;
 

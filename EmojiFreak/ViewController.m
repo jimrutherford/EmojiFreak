@@ -11,8 +11,6 @@
 #import "RIOInterface.h"
 #import "NVSlideMenuController.h"
 
-#define jimName @"Jim"
-
 
 @interface ViewController ()
 
@@ -37,21 +35,22 @@
 	
 	rioRef = [RIOInterface sharedInstance];
 	rioRef.delegate = self;
+	
 	[rioRef startListening];
+			
 	toneGenerator = [[ToneGenerator alloc] init];
 	toneGenerator.delegate = self;
 	
 	characterArray = [NSMutableArray array];
 	
-	
-	self.nameLabel.text = @"";
+	self.nameLabel.text = @"J";
 	
 	self.thinkingImageView.animationImages = [NSArray arrayWithObjects:[UIImage imageNamed:@"incoming01"], [UIImage imageNamed:@"incoming02"], [UIImage imageNamed:@"incoming03"], [UIImage imageNamed:@"incoming04"], nil];
 	self.thinkingImageView.animationDuration = 2.0f;
 	self.thinkingImageView.animationRepeatCount = 0;
 	[self.thinkingImageView startAnimating];
-	
-	[self resetThinkingImage];
+	self.thinkingImageView.alpha = 0.0f;
+	//[self resetThinkingImage];
 	
 }
 
@@ -119,6 +118,7 @@
 	[toneGenerator startToneUnit];
 	
 	[self hideThinkingImage];
+	[self updateNameLabel];
 }
 
 - (void) broadcastCharacter
@@ -140,9 +140,41 @@
 - (void)frequencyChangedWithValue:(int)newFrequency{
 	
 	self.currentFrequency = newFrequency;
-	self.frequencyDebug.text = [NSString stringWithFormat:@"%i", newFrequency];
 	
+	
+	int asciiCode;
+	
+	if (newFrequency >= emojiOffset)
+	{
+		// we got an emoji
+	}
+	else if (newFrequency >= asciiOffset)
+	{
+		asciiCode = ((newFrequency - asciiOffset)/100) + 96;
+	}
+	
+	NSString *nameText = self.currentName;
+	
+	nameText = [nameText stringByAppendingFormat:@"%c", asciiCode];
+	
+	NSLog(@"%i, %@", asciiCode, nameText);
+	
+	self.currentName = nameText;
+	
+	dispatch_async(dispatch_get_main_queue(), ^{
+		NSLog(@"update label - %@", self.currentName);
+		self.nameLabel.text = self.currentName;
+		self.frequencyDebug.text = [NSString stringWithFormat:@"%i", newFrequency];
+	});
+
 }
+
+- (void)updateNameLabel {
+	NSLog(@"update label - %@", self.currentName);
+	self.nameLabel.text = self.currentName;
+	[self.nameLabel setNeedsDisplay];
+}
+
 
 - (void) didFinishPlayingTone
 {
@@ -161,11 +193,19 @@
 - (void)didStartMessage
 {
 	NSLog(@"Incoming Transmission");
+	self.currentName = @"";
+		dispatch_async(dispatch_get_main_queue(), ^{
+	[self showThinkingImage];
+				});
 }
 
 - (void)didStopMessage
 {
 	NSLog(@"Transmission Complete");
+	
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self hideThinkingImage];
+				});
 }
 
 
@@ -199,22 +239,29 @@
 
 - (void) showThinkingImage
 {
-	[self resetThinkingImage];
+
+
+		[self resetThinkingImage];
+		
+		[UIView animateWithDuration:0.3f animations:^{
+			self.thinkingImageView.alpha = 1.0f;
+			CGRect frame = self.thinkingImageView.frame;
+			self.thinkingImageView.frame = CGRectMake((ScreenWidth - frame.size.width)/2, frame.origin.y, frame.size.width, frame.size.height);
+		}];
+
 	
-	[UIView animateWithDuration:0.3f animations:^{
-		self.thinkingImageView.alpha = 1.0f;
-		CGRect frame = self.thinkingImageView.frame;
-		self.thinkingImageView.frame = CGRectMake((ScreenWidth - frame.size.width)/2, frame.origin.y, frame.size.width, frame.size.height);
-	}];
+
 }
 
 - (void) hideThinkingImage
 {
-	[UIView animateWithDuration:0.3f animations:^{
-		self.thinkingImageView.alpha = 0.0f;
-		CGRect frame = self.thinkingImageView.frame;
-		self.thinkingImageView.frame = CGRectMake(ScreenWidth + frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
-	}];
+
+		[UIView animateWithDuration:0.3f animations:^{
+			self.thinkingImageView.alpha = 0.0f;
+			CGRect frame = self.thinkingImageView.frame;
+			self.thinkingImageView.frame = CGRectMake(ScreenWidth + frame.size.width, frame.origin.y, frame.size.width, frame.size.height);
+		}];
+
 }
 
 
