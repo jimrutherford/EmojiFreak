@@ -65,6 +65,8 @@
 
 @property(assign) float sampleRate;
 @property(assign) float frequency;
+@property(assign) int lastFrequency;
+
 
 #pragma mark Lifecycle
 

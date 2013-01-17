@@ -17,6 +17,7 @@
 @synthesize audioSessionDelegate;
 @synthesize sampleRate;
 @synthesize frequency;
+@synthesize lastFrequency;
 
 float MagnitudeSquared(float x, float y);
 void ConvertInt16ToFloat(RIOInterface* THIS, void *buf, float *outputBuf, size_t capacity);
@@ -60,7 +61,8 @@ void ConvertInt16ToFloat(RIOInterface* THIS, void *buf, float *outputBuf, size_t
 - (void)startListening
 {
 	[self createAUProcessingGraph];
-	[self initializeAndStartProcessingGraph];	
+	[self initializeAndStartProcessingGraph];
+	lastFrequency = 0.0f;
 }
 
 
@@ -163,35 +165,57 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 			
 		int currentFrequency = (int)round(bin*(THIS->sampleRate/bufferCapacity)/100.0f) * 100;
 		
+		// filter out low frequencies that we are not interested in
 		if (currentFrequency >= startSentinalFrequency)
 		{
-			// Update the UI with our newly acquired frequency value.
-			// Call delegate method
-			if (currentFrequency == startSentinalFrequency)
-			{
-				SEL didStartMessageSelector = @selector(didStartMessage);
-				if (THIS.delegate && [THIS.delegate respondsToSelector:didStartMessageSelector]) {
-					
-					printf("Did start message \n");
-					[THIS.delegate didStartMessage];
-				}
-			}
 			
-			if (currentFrequency == stopSentinalFrequency)
+			if (currentFrequency != THIS.lastFrequency)
 			{
-				SEL didStopMessageSelector = @selector(didStopMessage);
-				if (THIS.delegate && [THIS.delegate respondsToSelector:didStopMessageSelector]) {
+				// we have a new frequency detected
+				if (THIS.lastFrequency == startBitFrequency)
+				{
+					// we have a new data bit
 					
-					printf("Did stop message \n");
-					[THIS.delegate didStopMessage];
+					
+					// Update the UI with our newly acquired frequency value.
+					// Call delegate method
+					if (currentFrequency == startBitFrequency)
+					{
+											printf("startbit \n");
+					}
+					
+					else if (currentFrequency == startSentinalFrequency)
+					{
+						SEL didStartMessageSelector = @selector(didStartMessage);
+						if (THIS.delegate && [THIS.delegate respondsToSelector:didStartMessageSelector])
+						{
+							
+							printf("Did start message \n");
+							[THIS.delegate didStartMessage];
+						}
+					}
+					
+					else if (currentFrequency == stopSentinalFrequency)
+					{
+						SEL didStopMessageSelector = @selector(didStopMessage);
+						if (THIS.delegate && [THIS.delegate respondsToSelector:didStopMessageSelector])
+						{
+							
+							printf("Did stop message \n");
+							[THIS.delegate didStopMessage];
+						}
+					} else {
+						
+						SEL frequencyChangedWithValueSelector = @selector(frequencyChangedWithValue:);
+						if (THIS.delegate && [THIS.delegate respondsToSelector:frequencyChangedWithValueSelector]) {
+							
+							printf("Frequency Changed: %i \n", currentFrequency);
+							[THIS.delegate frequencyChangedWithValue:currentFrequency];
+						}
+					}
 				}
-			}
-			
-			SEL frequencyChangedWithValueSelector = @selector(frequencyChangedWithValue:);
-			if (THIS.delegate && [THIS.delegate respondsToSelector:frequencyChangedWithValueSelector]) {
 				
-				printf("Dominant frequency: %i \n", currentFrequency);
-				[THIS.delegate frequencyChangedWithValue:currentFrequency];
+				THIS.lastFrequency = currentFrequency;
 			}
 		}
 	}

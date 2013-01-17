@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RIOInterface.h"
 #import "ViewController.h"
+#import "NVSlideMenuController.h"
 
 @implementation AppDelegate
 
@@ -23,13 +24,25 @@
 	[rioRef setFrequency:294];
 	[rioRef initializeAudioSession];
 	
+
+	
+	
+	
 	
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+	    self.contentViewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+		self.menuViewController = [[ViewController alloc] initWithNibName:@"ConfigViewController_iPhone" bundle:nil];
 	} else {
-	    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+	    self.contentViewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+		self.menuViewController = [[ViewController alloc] initWithNibName:@"ConfigViewController_iPad" bundle:nil];
+
 	}
-	self.window.rootViewController = self.viewController;
+	
+	self.slideMenuController = [[NVSlideMenuController alloc] initWithMenuViewController:self.menuViewController andContentViewController:self.contentViewController];
+	
+	self.window.rootViewController = self.slideMenuController;
+	
+	
     [self.window makeKeyAndVisible];
     return YES;
 }

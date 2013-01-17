@@ -27,6 +27,24 @@
 		375EE5CB16A4DE09009C636C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375EE5CA16A4DE09009C636C /* CoreFoundation.framework */; };
 		375EE5CF16A5F3EC009C636C /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 375DB97616A4C53B00AE240F /* CAXException.cpp */; };
 		375EE5D216A5F43A009C636C /* RIOInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 375EE5D116A5F43A009C636C /* RIOInterface.mm */; };
+		375EE5D816A7524F009C636C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5D716A7524F009C636C /* Icon.png */; };
+		375EE5DA16A75253009C636C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5D916A75253009C636C /* Icon@2x.png */; };
+		375EE5DC16A7525F009C636C /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5DB16A7525F009C636C /* Icon-72.png */; };
+		375EE5DE16A75263009C636C /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5DD16A75263009C636C /* Icon-72@2x.png */; };
+		375EE5E816A75A79009C636C /* incoming01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5E416A75A79009C636C /* incoming01@2x.png */; };
+		375EE5E916A75A79009C636C /* incoming02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5E516A75A79009C636C /* incoming02@2x.png */; };
+		375EE5EA16A75A79009C636C /* incoming03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5E616A75A79009C636C /* incoming03@2x.png */; };
+		375EE5EB16A75A79009C636C /* incoming04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5E716A75A79009C636C /* incoming04@2x.png */; };
+		375EE5EF16A86EDE009C636C /* background-iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5EC16A86EDE009C636C /* background-iPhone@2x.png */; };
+		375EE5F016A86EDE009C636C /* chatBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5ED16A86EDE009C636C /* chatBubble@2x.png */; };
+		375EE5F116A86EDE009C636C /* configButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5EE16A86EDE009C636C /* configButton@2x.png */; };
+		375EE5F316A872A5009C636C /* background-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5F216A872A5009C636C /* background-iPad@2x.png */; };
+		375EE5F716A87D79009C636C /* NVSlideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375EE5F616A87D79009C636C /* NVSlideMenuController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		375EE5FA16A87F20009C636C /* configBG-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5F816A87F20009C636C /* configBG-iPad@2x.png */; };
+		375EE5FB16A87F20009C636C /* configBG-iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5F916A87F20009C636C /* configBG-iPhone@2x.png */; };
+		375EE5FF16A87F65009C636C /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375EE5FD16A87F64009C636C /* ConfigViewController.m */; };
+		375EE60016A87F65009C636C /* ConfigViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375EE5FE16A87F65009C636C /* ConfigViewController_iPhone.xib */; };
+		375EE60216A87FA8009C636C /* ConfigViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375EE60116A87FA8009C636C /* ConfigViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +79,26 @@
 		375EE5CA16A4DE09009C636C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		375EE5D016A5F43A009C636C /* RIOInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOInterface.h; sourceTree = "<group>"; };
 		375EE5D116A5F43A009C636C /* RIOInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOInterface.mm; sourceTree = "<group>"; };
+		375EE5D716A7524F009C636C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		375EE5D916A75253009C636C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		375EE5DB16A7525F009C636C /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		375EE5DD16A75263009C636C /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		375EE5E416A75A79009C636C /* incoming01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "incoming01@2x.png"; path = "images/incoming01@2x.png"; sourceTree = "<group>"; };
+		375EE5E516A75A79009C636C /* incoming02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "incoming02@2x.png"; path = "images/incoming02@2x.png"; sourceTree = "<group>"; };
+		375EE5E616A75A79009C636C /* incoming03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "incoming03@2x.png"; path = "images/incoming03@2x.png"; sourceTree = "<group>"; };
+		375EE5E716A75A79009C636C /* incoming04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "incoming04@2x.png"; path = "images/incoming04@2x.png"; sourceTree = "<group>"; };
+		375EE5EC16A86EDE009C636C /* background-iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-iPhone@2x.png"; path = "images/background-iPhone@2x.png"; sourceTree = "<group>"; };
+		375EE5ED16A86EDE009C636C /* chatBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chatBubble@2x.png"; path = "images/chatBubble@2x.png"; sourceTree = "<group>"; };
+		375EE5EE16A86EDE009C636C /* configButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "configButton@2x.png"; path = "images/configButton@2x.png"; sourceTree = "<group>"; };
+		375EE5F216A872A5009C636C /* background-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-iPad@2x.png"; path = "images/background-iPad@2x.png"; sourceTree = "<group>"; };
+		375EE5F516A87D79009C636C /* NVSlideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSlideMenuController.h; sourceTree = "<group>"; };
+		375EE5F616A87D79009C636C /* NVSlideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVSlideMenuController.m; sourceTree = "<group>"; };
+		375EE5F816A87F20009C636C /* configBG-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "configBG-iPad@2x.png"; path = "images/configBG-iPad@2x.png"; sourceTree = "<group>"; };
+		375EE5F916A87F20009C636C /* configBG-iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "configBG-iPhone@2x.png"; path = "images/configBG-iPhone@2x.png"; sourceTree = "<group>"; };
+		375EE5FC16A87F64009C636C /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		375EE5FD16A87F64009C636C /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		375EE5FE16A87F65009C636C /* ConfigViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController_iPhone.xib; sourceTree = "<group>"; };
+		375EE60116A87FA8009C636C /* ConfigViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +123,10 @@
 		375DB92516A46B8200AE240F = {
 			isa = PBXGroup;
 			children = (
+				375EE5DD16A75263009C636C /* Icon-72@2x.png */,
+				375EE5DB16A7525F009C636C /* Icon-72.png */,
+				375EE5D916A75253009C636C /* Icon@2x.png */,
+				375EE5D716A7524F009C636C /* Icon.png */,
 				375DB93A16A46B8200AE240F /* EmojiFreak */,
 				375DB93316A46B8200AE240F /* Frameworks */,
 				375DB93116A46B8200AE240F /* Products */,
@@ -117,6 +159,8 @@
 		375DB93A16A46B8200AE240F /* EmojiFreak */ = {
 			isa = PBXGroup;
 			children = (
+				375EE5F416A87D79009C636C /* NVSlideMenuController */,
+				375EE5DF16A75A50009C636C /* Resources */,
 				375DB96A16A4A12400AE240F /* Classes */,
 				375DB94316A46B8200AE240F /* AppDelegate.h */,
 				375DB94416A46B8200AE240F /* AppDelegate.m */,
@@ -124,6 +168,10 @@
 				375DB94D16A46B8200AE240F /* ViewController.m */,
 				375DB94F16A46B8200AE240F /* ViewController_iPhone.xib */,
 				375DB95216A46B8200AE240F /* ViewController_iPad.xib */,
+				375EE5FC16A87F64009C636C /* ConfigViewController.h */,
+				375EE5FD16A87F64009C636C /* ConfigViewController.m */,
+				375EE5FE16A87F65009C636C /* ConfigViewController_iPhone.xib */,
+				375EE60116A87FA8009C636C /* ConfigViewController_iPad.xib */,
 				375DB93B16A46B8200AE240F /* Supporting Files */,
 			);
 			path = EmojiFreak;
@@ -165,6 +213,64 @@
 				375EE5C516A4DD23009C636C /* CADebugPrintf.h */,
 			);
 			name = CAUtil;
+			sourceTree = "<group>";
+		};
+		375EE5DF16A75A50009C636C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5E016A75A57009C636C /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		375EE5E016A75A57009C636C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5E316A75A6A009C636C /* Universal */,
+				375EE5E216A75A65009C636C /* iPhone */,
+				375EE5E116A75A60009C636C /* iPad */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		375EE5E116A75A60009C636C /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5F816A87F20009C636C /* configBG-iPad@2x.png */,
+				375EE5F216A872A5009C636C /* background-iPad@2x.png */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		375EE5E216A75A65009C636C /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5EC16A86EDE009C636C /* background-iPhone@2x.png */,
+				375EE5F916A87F20009C636C /* configBG-iPhone@2x.png */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		375EE5E316A75A6A009C636C /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5E416A75A79009C636C /* incoming01@2x.png */,
+				375EE5E516A75A79009C636C /* incoming02@2x.png */,
+				375EE5E616A75A79009C636C /* incoming03@2x.png */,
+				375EE5E716A75A79009C636C /* incoming04@2x.png */,
+				375EE5ED16A86EDE009C636C /* chatBubble@2x.png */,
+				375EE5EE16A86EDE009C636C /* configButton@2x.png */,
+			);
+			name = Universal;
+			sourceTree = "<group>";
+		};
+		375EE5F416A87D79009C636C /* NVSlideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				375EE5F516A87D79009C636C /* NVSlideMenuController.h */,
+				375EE5F616A87D79009C636C /* NVSlideMenuController.m */,
+			);
+			path = NVSlideMenuController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +330,22 @@
 				375DB94B16A46B8200AE240F /* Default-568h@2x.png in Resources */,
 				375DB95116A46B8200AE240F /* ViewController_iPhone.xib in Resources */,
 				375DB95416A46B8200AE240F /* ViewController_iPad.xib in Resources */,
+				375EE5D816A7524F009C636C /* Icon.png in Resources */,
+				375EE5DA16A75253009C636C /* Icon@2x.png in Resources */,
+				375EE5DC16A7525F009C636C /* Icon-72.png in Resources */,
+				375EE5DE16A75263009C636C /* Icon-72@2x.png in Resources */,
+				375EE5E816A75A79009C636C /* incoming01@2x.png in Resources */,
+				375EE5E916A75A79009C636C /* incoming02@2x.png in Resources */,
+				375EE5EA16A75A79009C636C /* incoming03@2x.png in Resources */,
+				375EE5EB16A75A79009C636C /* incoming04@2x.png in Resources */,
+				375EE5EF16A86EDE009C636C /* background-iPhone@2x.png in Resources */,
+				375EE5F016A86EDE009C636C /* chatBubble@2x.png in Resources */,
+				375EE5F116A86EDE009C636C /* configButton@2x.png in Resources */,
+				375EE5F316A872A5009C636C /* background-iPad@2x.png in Resources */,
+				375EE5FA16A87F20009C636C /* configBG-iPad@2x.png in Resources */,
+				375EE5FB16A87F20009C636C /* configBG-iPhone@2x.png in Resources */,
+				375EE60016A87F65009C636C /* ConfigViewController_iPhone.xib in Resources */,
+				375EE60216A87FA8009C636C /* ConfigViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +362,8 @@
 				375DB94E16A46B8200AE240F /* ViewController.m in Sources */,
 				375DB96D16A4A17A00AE240F /* ToneGenerator.m in Sources */,
 				375EE5D216A5F43A009C636C /* RIOInterface.mm in Sources */,
+				375EE5F716A87D79009C636C /* NVSlideMenuController.m in Sources */,
+				375EE5FF16A87F65009C636C /* ConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

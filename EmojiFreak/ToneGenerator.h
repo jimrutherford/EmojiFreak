@@ -9,14 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+@protocol ToneGeneratorDelegate <NSObject>
+
+- (void)didFinishPlayingTone;
+
+@end
+
 @interface ToneGenerator : NSObject
 {
 	AudioComponentInstance toneUnit;
 }
 
+@property (nonatomic, weak) id <ToneGeneratorDelegate> delegate;
+
 @property (nonatomic, assign, readwrite) double sampleRate;
 @property (nonatomic, assign, readwrite) double theta;
 @property (nonatomic, assign, readwrite) double frequency;
+@property (nonatomic, assign, readwrite) double transmissionBitFrequency;
 
 - (void)stop;
 - (void)createToneUnit;

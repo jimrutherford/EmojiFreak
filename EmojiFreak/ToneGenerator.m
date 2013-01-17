@@ -59,6 +59,7 @@ void ToneInterruptionListener(void *inClientData, UInt32 inInterruptionState)
 @implementation ToneGenerator
 
 @synthesize frequency;
+@synthesize transmissionBitFrequency;
 @synthesize sampleRate;
 
 - (id)init
@@ -94,14 +95,14 @@ void ToneInterruptionListener(void *inClientData, UInt32 inInterruptionState)
         // Start playback
         err = AudioOutputUnitStart(toneUnit);
         NSAssert1(err == noErr, @"Error starting unit: %hd", err);
-
+		frequency = startBitFrequency;
 		[NSTimer scheduledTimerWithTimeInterval:toneInterval target:self selector:@selector(playStopFreq) userInfo:nil repeats:NO];
     }
 }
 
 - (void) playStopFreq
 {
-	frequency = stopFrequency;
+	frequency = transmissionBitFrequency;
 	[NSTimer scheduledTimerWithTimeInterval:toneInterval target:self selector:@selector(stopToneUnit) userInfo:nil repeats:NO];
 }
 
@@ -114,6 +115,16 @@ void ToneInterruptionListener(void *inClientData, UInt32 inInterruptionState)
         AudioUnitUninitialize(toneUnit);
         AudioComponentInstanceDispose(toneUnit);
         toneUnit = nil;
+		
+		// if our current frequency is the stop sentinal frequency we don't need a callback
+		if (frequency != stopSentinalFrequency)
+		{
+			SEL didFinishPlayingToneSelector = @selector(didFinishPlayingTone);
+			if (self.delegate && [self.delegate respondsToSelector:didFinishPlayingToneSelector]) {
+				
+				[self.delegate didFinishPlayingTone];
+			}
+		}
     }
 }
 
