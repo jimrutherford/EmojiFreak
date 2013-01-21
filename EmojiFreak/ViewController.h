@@ -28,7 +28,7 @@
 
 // UI Actions
 - (IBAction)configButton:(UIButton *)sender;
-- (IBAction)frequencyButton:(UIButton*)selectedButton;
+
 
 // UI Outlets
 

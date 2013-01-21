@@ -118,7 +118,6 @@
 	[toneGenerator startToneUnit];
 	
 	[self hideThinkingImage];
-	[self updateNameLabel];
 }
 
 - (void) broadcastCharacter
@@ -177,12 +176,6 @@
 
 }
 
-- (void)updateNameLabel {
-	NSLog(@"update label - %@", self.currentName);
-	self.nameLabel.text = self.currentName;
-	[self.nameLabel setNeedsDisplay];
-}
-
 
 - (void) didFinishPlayingTone
 {
@@ -211,9 +204,10 @@
 {
 	NSLog(@"Transmission Complete");
 	
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self hideThinkingImage];
-				});
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self hideThinkingImage];
+	});
+	self.nameLabel.text = @"me";
 }
 
 
@@ -309,6 +303,8 @@
 	NSString *imageName = [NSString stringWithFormat:@"emo_%i", index];
 	self.emojiImageView.image = [UIImage imageNamed:imageName];
 
+	
+	self.nameLabel.text = @"me";
 	
 	NSLog(@"Emoji - %i", index);
 }

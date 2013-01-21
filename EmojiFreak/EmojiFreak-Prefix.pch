@@ -19,7 +19,7 @@
 #define asciiOffset			11000
 #define emojiOffset	14000
 #define startBitFrequency	18000
-#define toneInterval			 0.5f
+#define toneInterval			 0.2f
 
 
 
